@@ -160,5 +160,5 @@ cython_debug/
 #.idea/
 origen/*
 finish/*
-!origen/.gitkeep 
-!finish/.gitkeep 
+!origen/ 
+!finish/ 
