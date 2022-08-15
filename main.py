@@ -1,3 +1,4 @@
+from ast import Try
 import os
 from PIL import Image
 
@@ -21,10 +22,18 @@ def main():
 
     
     for i in all_files:
-        name = i.replace('.jpg', '') 
-        image = Image.open(CURRENT_PATH+i)
-        image = image.convert("RGB")
-        image.save(FINISH_PATH+name+'.webp', 'webp', quality=50)
+        # print(f"Optimizando img => {i}")
+        try:
+            name = i.replace('.jpg', '') 
+            image = Image.open(CURRENT_PATH+i)
+            image = image.convert("RGB")
+            image.save(FINISH_PATH+name+'.webp', 'webp', quality=50)
+        except:
+            print(f"error img => {i}")
+
+        
+
+       
     
 
     print("¡Trabajo terminado!")
