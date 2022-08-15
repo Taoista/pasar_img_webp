@@ -24,10 +24,13 @@ def main():
     for i in all_files:
         # print(f"Optimizando img => {i}")
         try:
-            name = i.replace('.jpg', '') 
+            name = i
             image = Image.open(CURRENT_PATH+i)
             image = image.convert("RGB")
-            image.save(FINISH_PATH+name+'.webp', 'webp', quality=50)
+
+            base = os.path.splitext(i)[0]
+
+            image.save(FINISH_PATH+base+'.webp', 'webp', quality=50)
         except:
             print(f"error img => {i}")
 
