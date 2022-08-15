@@ -8,6 +8,8 @@ def main():
     # * GET PATH
     CURRENT_PATH = os.getcwd()+'\origen\\'
     FINISH_PATH = os.getcwd()+'\\finish\\'
+    QUALITY = 50
+
     # * CREATE FOLDER IF NOT EXISTS
     try:
         os.mkdir("finish")
@@ -24,7 +26,7 @@ def main():
 
             base = os.path.splitext(i)[0]
 
-            image.save(FINISH_PATH+base+'.webp', 'webp', quality=50)
+            image.save(FINISH_PATH+base+'.webp', 'webp', quality=QUALITY)
         except:
             print(f"error img => {i}")
 
