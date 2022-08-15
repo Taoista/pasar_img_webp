@@ -4,27 +4,21 @@ from PIL import Image
 
 
 
-
-
 def main():
+    # * GET PATH
     CURRENT_PATH = os.getcwd()+'\origen\\'
     FINISH_PATH = os.getcwd()+'\\finish\\'
-    IMG_EXT = ".jpg"
-
+    # * CREATE FOLDER IF NOT EXISTS
     try:
         os.mkdir("finish")
+        os.mkdir("origen")
     except:
         pass        
 
     all_files = os.listdir(CURRENT_PATH)
 
-    imgList = list()
-
-    
     for i in all_files:
-        # print(f"Optimizando img => {i}")
         try:
-            name = i
             image = Image.open(CURRENT_PATH+i)
             image = image.convert("RGB")
 
@@ -34,10 +28,6 @@ def main():
         except:
             print(f"error img => {i}")
 
-        
-
-       
-    
 
     print("¡Trabajo terminado!")
 
